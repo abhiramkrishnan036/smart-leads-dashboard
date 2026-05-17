@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Smart Leads Dashboard Backend",
   "main": "index.js",
-  "scripts": {
+ "scripts": {
   "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-  "start": "node dist/app.js",
-  "build": "tsc"
+  "build": "tsc",
+  "start": "node dist/app.js"
 },
   "keywords": [],
   "author": "",
