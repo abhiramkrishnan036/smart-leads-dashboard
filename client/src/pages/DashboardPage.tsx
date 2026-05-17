@@ -427,10 +427,10 @@ const COLORS = [
           label
         >
           {chartData.map(
-            (
-              entry,
-              index
-            ) => (
+  (
+    _,
+    index
+  ) => (
               <Cell
                 key={`cell-${index}`}
                 fill={
