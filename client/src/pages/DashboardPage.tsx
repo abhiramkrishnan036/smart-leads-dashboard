@@ -125,9 +125,9 @@ const [filterStatus,
       e.preventDefault();
 
       try {
-       await axios.post(
+      await axios.post(
   "https://smart-leads-dashboard-lmq7.onrender.com/api/leads",
-  leadData,
+  formData,
   {
     headers: {
       Authorization: `Bearer ${token}`,
