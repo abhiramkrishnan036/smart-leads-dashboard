@@ -70,8 +70,8 @@ const [filterStatus,
     async () => {
       try {
         const response =
-         await axios.get(
-  "http://localhost:5000/api/leads",
+       await axios.get(
+  "https://smart-leads-dashboard-lmq7.onrender.com/api/leads", 
   {
     headers: {
       Authorization:
@@ -125,13 +125,12 @@ const [filterStatus,
       e.preventDefault();
 
       try {
-        await axios.post(
-  "http://localhost:5000/api/leads",
-  formData,
+       await axios.post(
+  "https://smart-leads-dashboard-lmq7.onrender.com/api/leads",
+  leadData,
   {
     headers: {
-      Authorization:
-        `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   }
 );
@@ -161,37 +160,28 @@ const [filterStatus,
     };
 
   // Delete Lead
-  const handleDeleteLead =
-    async (
-      id: string
-    ) => {
-      try {
-       await axios.delete(
-  `http://localhost:5000/api/leads/${id}`,
-  {
-    headers: {
-      Authorization:
-        `Bearer ${token}`,
-    },
-  }
-); 
-
-        toast.success(
-  "Lead deleted successfully!"
-);
-
-        fetchLeads();
-      } catch (error) {
-        console.error(
-          "Error deleting lead:",
-          error
-        );
-
-       toast.error(
-  "Failed to delete lead"
-); 
+ const handleDeleteLead = async (id: string) => {
+  try {
+    await axios.delete(
+      `https://smart-leads-dashboard-lmq7.onrender.com/api/leads/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    };
+    );
+
+    toast.success(
+      "Lead deleted successfully!"
+    );
+
+    fetchLeads();
+  } catch (error) {
+    toast.error(
+      "Failed to delete lead"
+    );
+  }
+}; 
 
   // Update Lead
   const handleUpdateLead =
@@ -200,7 +190,7 @@ const [filterStatus,
     ) => {
       try {
        await axios.put(
-  `http://localhost:5000/api/leads/${id}`,
+  `http://https://smart-leads-dashboard-lmq7.onrender.com:5000/api/leads/${id}`,
   {
     status:
       editStatus,
